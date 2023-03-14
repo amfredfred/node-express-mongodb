@@ -9,6 +9,7 @@ const bodyParser = require('body-parser')
 //Routes
 const HomeRoutes = require('./routes')
 const AuthorsRoutes = require('./routes/authors')
+const BookRoutes = require('./routes/books')
 
 //SETTING VIEWS
 app.set('view engine', 'ejs')
@@ -28,6 +29,7 @@ DB.once('open', () => console.log('Connected To Mongoose'))
 
 app.use('/', HomeRoutes)
 app.use('/authors', AuthorsRoutes)
+app.use('/books', BookRoutes)
 
 
 

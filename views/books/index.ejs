@@ -1,0 +1,33 @@
+<h1 style="color: green;"> ALL BOOKS </h1>
+<hr />
+<h3>Search Books</h3>
+<form action="/books" method="get">
+    <div>
+        <label for="">Title</label>
+        <input type="search" placeholder="search title" name="title" value=<%=locals.query_params.title %>>
+    </div>
+
+    <div>
+        <label for="">Published After</label>
+        <input type="date" name="published_after" value=<%=locals.query_params.published_after %>>
+    </div>
+
+    <div>
+        <label for="">Published Before</label>
+        <input type="date" name="published_before" value=<%=locals.query_params.published_before %>>
+    </div>
+
+    <button type="submit">Search</button>
+
+</form>
+
+<br />
+<hr />
+<div>
+    <% books.forEach(book=> {%>
+        <!-- <div> -->
+            <!-- <%= book.title %> -->
+            <img src="<%= book.coverImagePath %>" height='150' width='100' alt="">
+        <!-- </div> -->
+        <% }) %>
+</div>
