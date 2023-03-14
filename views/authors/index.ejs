@@ -1,0 +1,14 @@
+<h1 style="color: green;"> ALL AUTHORS </h1>
+<hr />
+<h3>Search AUTHORS</h3>
+<label for="">Name</label>
+<form action="/authors" method="get">
+    <input  type="search" placeholder="search name" name="name" value=<%= locals.query_param.name  %>>
+    <button type="submit">Search</button>
+</form>
+
+<br />
+
+<% authors.forEach(author=> {%>
+    <div><%= author.name %> </div>
+<% }) %>
